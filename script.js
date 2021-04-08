@@ -3,17 +3,20 @@ const card = document.getElementById("card");
 const quoteText = document.getElementById("quote-text");
 const authorText = document.getElementById("author-text");
 const newQuoteBtn = document.getElementById("new-quote");
-const postQuote = document.getElementById("post-quote");
+const postQuoteBtn = document.getElementById("post-quote");
 
 // quote container
 let quoteArray = [];
 const API_URL = "https://type.fit/api/quotes";
+
 //FUNCTIONS
-//helper function to set Attributes
-const setAttributes = (element, attributes) => {
-  for (let key in attributes) {
-    element.setAttribute(key, attributes[key]);
-  }
+
+//tweet a quote
+const tweetQuote = () => {
+  //twitter url that tweets the quote and author info
+  const twitter_URL = `https://twitter.com/intent/tweet?text=${quoteText.textContent} - ${authorText.textContent}`;
+  //open a new window to the link above to tweet the quote
+  window.open(twitter_URL, "_blank");
 };
 
 // show quote on page
@@ -24,7 +27,7 @@ const displayQuote = () => {
   const { author, text } = randomQuote;
   //pass in text and author info into elements to display on page
   quoteText.textContent = text;
-  authorText.textContent = author;
+  authorText.textContent = author || "Unknown";
 };
 
 //fetchQuotes
@@ -43,3 +46,5 @@ fetchQuotes(API_URL);
 newQuoteBtn.addEventListener("click", () => {
   displayQuote();
 });
+
+postQuoteBtn.addEventListener("click", tweetQuote);
