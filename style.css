@@ -1,9 +1,205 @@
 
-html {
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap");
+
+:root {
+  --primary: #cae5e9;
+  --text: rgba(40, 39, 40, 0.929);
+  --span: rgb(0, 213, 255);
+  --white: rgb(243, 242, 242);
+  --twitter-col: #1da1f2;
+  --transition: all 0.2s ease;
+  --linear: all 0.2s linear;
+  --radius: 0.5rem;
+  --shadow-light: 0 0 10px 5px rgba(255, 255, 255, 0.786);
+  --shadow-dark: 0 0 10px rgba(0, 0, 0, 0.8);
+  --spacing: 2px;
+}
+
+* {
+  margin: 0;
   box-sizing: border-box;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
-  margin: 0;
   min-height: 100vh;
+  font-family: "Raleway", sans-serif;
+  background-color: #0093e9;
+  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
 }
+
+h1,
+h2,
+h3 {
+  line-height: 1.5;
+  text-align: center;
+  color: whitesmoke;
+  transition: var(--linear);
+}
+
+h1 {
+  font-size: 3.2rem;
+  margin-bottom: 0.8rem;
+}
+h2 {
+  font-size: 1.8rem;
+}
+h3 {
+  font-size: 1.6rem;
+  margin-top: 1.6rem;
+}
+
+/* media query DESKTOP*/
+
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4.8rem;
+  }
+  h2 {
+    font-size: 3.2rem;
+  }
+  h3 {
+    font-size: 2.4rem;
+    margin-top: 1.6rem;
+  }
+}
+
+/* CONTAINER */
+
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* TOGGLE THEME */
+
+.toggle {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  border: 0;
+  background: var(--text);
+  color: var(--twitter-col);
+  padding: 0.8rem 2.4rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  transition: var(--transition);
+  font-weight: 400;
+  letter-spacing: var(--spacing);
+}
+
+.toggle:hover {
+  background: var(--twitter-col);
+  color: var(--text);
+  font-weight: bold;
+  box-shadow: var(--shadow-dark);
+}
+
+/* TITLE */
+.title {
+  width: 100%;
+  max-width: 340px;
+}
+
+.colour {
+  color: var(--twitter-col);
+}
+
+@media (min-width: 800px) {
+  .title {
+    max-width: 600px;
+  }
+}
+
+/* QUOTE CARD */
+
+.card {
+  background: var(--white);
+  opacity: 0.8;
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  padding: 1.6rem;
+  transition: var(--linear);
+  margin-top: 5.6rem;
+  color: var(--text);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-light);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-dark);
+}
+
+.card .quote {
+  font-size: 2.4rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.card .author {
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 0.8rem 0;
+  margin: 0.8rem 0;
+}
+
+.tweet-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tweet-container .post-quote,
+.new-quote {
+  color: var(--twitter-col);
+  background: var(--text);
+  border: 0;
+  font-size: 1.6rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radius);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-dark);
+}
+
+@media (min-width: 800px) {
+  .card {
+    max-width: 700px;
+  }
+
+  .card .quote {
+    font-size: 3.2rem;
+  }
+
+  .card .author {
+    font-size: 2.4rem;
+  }
+
+  .tweet-container .post-quote,
+  .new-quote {
+    font-size: 2.4rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .card {
+    padding: 1.6rem;
+    max-width: 850px;
+  }
+}
+
+/* QUOTE BUTTONS */
