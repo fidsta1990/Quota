@@ -188,6 +188,12 @@ h3 {
 
   .card .quote {
     font-size: 3.2rem;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .quote .quote-text {
+    padding: 0 0.8rem;
   }
 
   .card .author {
