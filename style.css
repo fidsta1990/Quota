@@ -151,9 +151,11 @@ h3 {
 
 .card .author {
   font-size: 1.6rem;
+  font-weight: 600;
   text-align: center;
   padding: 0.8rem 0;
   margin: 0.8rem 0;
+  color: var(--twitter-col);
 }
 
 .tweet-container {
